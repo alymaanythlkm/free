@@ -1,98 +1,141 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إنشاء حساب</title>
+  <title> Try It Yourself </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <style type="text/css">
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; font-family: sans-serif; background-color: #f4f4f4; }
-    
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
     .form-container {
-      margin: 20px auto;
-      max-width: 450px;
+      margin: 20px;
       padding: 15px;
       background: #173459;
       color: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
     }
-
-    .input-cnt { display: flex; margin-bottom: 15px; }
-
+    .input-cnt {
+      display: flex; /* display the icon and the input in a line */
+      margin-bottom: 15px;
+    }
+    .input-cnt:last-child {
+      margin-bottom: 0px;
+    }
     .input-cnt > i {
-      min-width: 50px;
-      padding: 10px;
-      text-align: center;
+      min-width: 40px; /* set a minimum width for the icon */
+      padding: 10px; /* make sure the icon is centered vertically */
+      text-align: center; /* horizontally center the icon */
       background: lightgrey;
-      /* تصحيح: الزوايا المنحنية يجب أن تكون جهة اليمين لأننا نستخدم RTL */
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
       color: #0076ff;
     }
-
-    .input-cnt > input {
+    /* change styles when focused */
+    .input-cnt:hover > i {
+      background: #0076ff;
+      color: white;
+    }
+    /* style the inputs */
+    .input-cnt > input[type="text"], .input-cnt > input[type="password"] {
       outline: none;
       border: none;
       padding: 10px;
       border: 1px solid lightgrey;
-      /* تصحيح: الزوايا المنحنية جهة اليسار لتتصل بالأيقونة */
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 0px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 0px;
       width: 100%;
     }
-
-    /* تنسيق زر تقديم الطلب */
-    .submit-btn {
+    /* style the submit button */
+    /*التحكم بالزر*/
+     .input-cnt > input[type="submit"] {
       border: none;
       border-radius: 20px;
-      width: 100%;
-      padding: 12px;
+      outline: none;
+      width: 75%;
+      margin: 0 auto;
+      font-size: 105%;
+      padding: 8px;
       color: #0076ff;
       background: white;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 16px;
+      transition-duration: .5s;
+    }
+    /* add a hover effect for the submit button */
+   /*  التحكم بالزر آضافة بعض الخصائص*/
+    .input-cnt > input[type="submit"]:hover {
+      color: white;
+      background: #efff1f;
     }
   </style>
 </head>
 <body>
+  
 
-  <h2 style="text-align: center; color: #173459;"> إنشاء حساب </h2>
+  <h2 style="text-align: center"> إنشاء حساب </h2>
   <div class="form-container">
 
-    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
-      <input type="hidden" name="access_key" value="bb611f86-0aaf-4725-9876-4f82fbe0689e">
+    <input type="hidden" name="access_key" value="bb611f86-0aaf-4725-9876-4f82fbe0689e">
 
-      <input type="hidden" name="redirect" value="https://twhyb2023.github.io/thanks.html">
+    <input type="hidden" name="redirect" value="thanks.html">
+
+    
 
       <div class="input-cnt">
-        <i class="material-icons">person</i>
-        <input type="text" placeholder="إسمك بالكامل" name="name" required />
+        <i class="material-icons">Name</i>
+        <input type="text" placeholder="إسمك بالكامل" name="name" />
       </div>
 
       <div class="input-cnt">
-        <i class="material-icons">fingerprint</i>
-        <input type="text" placeholder="رقم الهوية ID" name="username" required />
+        <i class="material-icons">ID</i>
+        <input type="text" placeholder="ID" name="username" />
       </div>
 
       <div class="input-cnt">
         <i class="material-icons">email</i>
-        <input type="email" placeholder="البريد الإلكتروني" name="email" required />
+        <input type="text" placeholder="Email" name="email" />
       </div>
 
       <div class="input-cnt">
         <i class="material-icons">lock</i>
-        <input type="password" placeholder="كلمة المرور" name="password" required />
+        <input type="password" placeholder="Password" name="password" />
       </div>
 
-      <div class="input-cnt" style="margin-top: 20px;">
-        <input type="submit" class="submit-btn" value="تقديم طلب" />
+      <div class="input-cnt">
+        <input type="submit" value="تقديم طلب" />
       </div>
 
     </form>
+
+  </div>
+
+  <!--<h2 style="text-align: center"> Login </h2>
+  <div class="form-container">
+
+    <form action="#">
+
+      <div class="input-cnt">
+     <!--   <i class="material-icons">person</i>
+        <input type="text" placeholder="Email or username" name="email" />
+      </div>
+
+      <div class="input-cnt">
+        <i class="material-icons">lock</i>
+        <!--<input type="password" placeholder="Password" name="password" />  -->
+      </div>
+
+   <!--   <div class="input-cnt">
+        <input type="submit" value="Login" />-->
+      </div>
+
+    </form>
+
   </div>
 </body>
 </html>
