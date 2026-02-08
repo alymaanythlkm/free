@@ -1,73 +1,35 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html lang="ar" dir="rtl"> <head>
-  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title> Try It Yourself </title>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> إنشاء حساب </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: sans-serif; }
     .form-container {
-      margin: 20px;
+      margin: 20px auto;
+      max-width: 450px;
       padding: 15px;
       background: #173459;
       color: white;
-      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 10px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
     }
-    .input-cnt {
-      display: flex; 
-      margin-bottom: 15px;
-    }
-    .input-cnt:last-child {
-      margin-bottom: 0px;
-    }
+    .input-cnt { display: flex; margin-bottom: 15px; }
     .input-cnt > i {
-      min-width: 40px; 
-      padding: 10px; 
-      text-align: center; 
-      background: lightgrey;
-      /* تصحيح: تعديل الزوايا لتناسب الاتجاه من اليمين لليسار RTL */
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-      border-top-left-radius: 0px;
-      border-bottom-left-radius: 0px;
-      color: #0076ff;
+      min-width: 40px; padding: 10px; text-align: center;
+      background: lightgrey; color: #0076ff;
+      border-top-right-radius: 20px; border-bottom-right-radius: 20px;
     }
-    .input-cnt:hover > i {
-      background: #0076ff;
-      color: white;
+    .input-cnt > input {
+      outline: none; border: none; padding: 10px; border: 1px solid lightgrey;
+      border-top-left-radius: 20px; border-bottom-left-radius: 20px; width: 100%;
     }
-    .input-cnt > input[type="text"], .input-cnt > input[type="password"], .input-cnt > input[type="email"] {
-      outline: none;
-      border: none;
-      padding: 10px;
-      border: 1px solid lightgrey;
-      /* تصحيح: تعديل الزوايا لتناسب الاتجاه من اليمين لليسار RTL */
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      width: 100%;
-    }
-     .input-cnt > input[type="submit"] {
-      border: none;
-      border-radius: 20px;
-      outline: none;
-      width: 75%;
-      margin: 0 auto;
-      font-size: 105%;
-      padding: 8px;
-      color: #0076ff;
-      background: white;
-      transition-duration: .5s;
-      cursor: pointer; /* إضافة: لتحسين تجربة المستخدم عند الضغط */
-    }
-    .input-cnt > input[type="submit"]:hover {
-      color: white;
-      background: #efff1f;
+    .input-cnt > input[type="submit"] {
+      border: none; border-radius: 20px; width: 80%; margin: 0 auto;
+      padding: 10px; color: #0076ff; background: white; cursor: pointer;
     }
   </style>
 </head>
@@ -79,7 +41,8 @@
     <form action="https://api.web3forms.com/submit" method="POST">
 
       <input type="hidden" name="access_key" value="bb611f86-0aaf-4725-9876-4f82fbe0689e">
-      <input type="hidden" name="redirect" value="thanks.html">
+
+      <input type="hidden" name="redirect" value="https://twhyb2023.github.io/thanks.html">
 
       <div class="input-cnt">
         <i class="material-icons">person</i>
@@ -93,12 +56,12 @@
 
       <div class="input-cnt">
         <i class="material-icons">email</i>
-        <input type="email" placeholder="Email" name="email" required />
+        <input type="email" placeholder="البريد الإلكتروني" name="email" required />
       </div>
 
       <div class="input-cnt">
         <i class="material-icons">lock</i>
-        <input type="password" placeholder="Password" name="password" required />
+        <input type="password" placeholder="كلمة المرور" name="password" required />
       </div>
 
       <div class="input-cnt">
@@ -107,6 +70,5 @@
 
     </form>
   </div>
-
-  </body>
+</body>
 </html>
